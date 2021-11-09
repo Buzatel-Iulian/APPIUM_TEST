@@ -1,0 +1,10 @@
+2021-11-05 15:31:10:933 [Appium] Welcome to Appium v1.22.0
+2021-11-05 15:31:10:934 [Appium] Non-default server args:
+2021-11-05 15:31:10:934 [Appium]   allowCors: true
+2021-11-05 15:31:10:934 [Appium]   address: 127.0.0.1
+2021-11-05 15:31:10:935 [Appium]   basePath: /wb/hub
+2021-11-05 15:31:10:935 [Appium]   bootstrapPort: 5554
+2021-11-05 15:31:10:935 [Appium]   logFile: appium_log.txt
+2021-11-05 15:31:10:967 [Appium] You have enabled CORS requests from any host. Be careful not to visit sites which could maliciously try to start Appium sessions on your machine
+2021-11-05 15:31:10:968 [Appium] Appium REST http interface listener started on 127.0.0.1:4723
+2021-11-05 15:31:11:308 [HTTP] Request idempotency key: 96847b26-77bf-455f-946e-a9ad44d09f9c

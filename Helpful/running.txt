@@ -1,0 +1,3 @@
+appium -p 4723 -a 127.0.0.1 -pa /wb/hub -bp 5554 --allow-cors
+
+emulator -avd Pixel_3_API_27

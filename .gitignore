@@ -1,4 +1,11 @@
 log.html
 output.xml
 report.html
+
+appium_log.txt
+
+appium_log1.txt
+
 venv/
+
+__pycache__/

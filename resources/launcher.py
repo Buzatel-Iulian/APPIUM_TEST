@@ -1,6 +1,7 @@
 import subprocess
 import multiprocessing
 from sys import stdout
+import platform
 
 class launcher2:
     def __init__(self, command="whoami", is_background=True):
@@ -8,14 +9,24 @@ class launcher2:
         self.name = command.split()[0]
         self.logfile = self.name + "_log.txt"
         self.aplication = None
-        self.event = multiprocessing.Event()
+        #self.event = multiprocessing.Event()
         self.is_background = is_background
+        self.pid = None
+        #self.mgr = None
+        #self.mgr = multiprocessing.Manager()
+        #self.p_data = self.mgr.dict()
+        self.p_data = None
+        #self.p_data["pid"]=None
+        #self.p_data["is_background"]=is_background
 
     def Execute(self):
         print('Executing command:\n' + ' '.join(self.command))
 
         process = subprocess.Popen(self.command, stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
+        self.pid = process.pid
+        #data["pid"] = process.pid
+        print (f"PID : {self.pid}")
         if not self.is_background:
             out_line = ''
             while True:
@@ -30,11 +41,12 @@ class launcher2:
                 if out_line == '' and process.poll() is not None:
                     break
                 #print(5)
-                stdout.write(out_line)
-                stdout.flush()
-                if self.event.is_set() :
-                    self.StopProcess(process)
-                    break
+                #stdout.write(out_line)
+                #stdout.flush()
+                print(out_line)
+                #if self.event.is_set() :
+                    #self.StopProcess(process)
+                    #break
                 #print(1)
         else :
             log = open(self.logfile, "w")
@@ -55,29 +67,35 @@ class launcher2:
                 ##stdout.write(out_line)
                 ##stdout.flush()
 
-                if self.event.is_set() :
-                    self.StopProcess(process)
-                    break
+                #if self.event.is_set() :
+                    #self.StopProcess(process)
+                    #break
                 #print(1)
             log.close()
         
         #return process
 
-    def StopProcess (self, process):
-        if process is not None:
-            process.terminate()
-            try:
-                process.wait(3)
-            except subprocess.TimeoutExpired:
-                process.kill()
-
     def launch(self):
+        self.pid = -1
+        #self.mgr = multiprocessing.Manager()
+        #self.p_data = self.mgr.dict()
+
         self.aplication=multiprocessing.Process(name=self.name,target=self.Execute)
         self.aplication.start()
 
     def stop(self):
-        self.event.set()
+        #self.event.set()
+        self.aplication.terminate()
         self.aplication.join()
+
+        print(self.pid)
+        #print(p_data["pid"])
+        if platform.system() == "Windows":
+            Execute("taskkill /F /IM node.exe", is_background = False)
+        else:
+            Execute("killall node", is_background = False)
+
+
 
 def Execute(command_list, is_background=False):
   

@@ -1,9 +1,9 @@
 log.html
 output.xml
 report.html
+testing.py
 
-appium_log.txt
-
+appium_log2.txt
 appium_log1.txt
 
 venv/

@@ -1,5 +1,7 @@
 import invoke
 import resources.launcher as launcher
+from time import sleep
+import os
 
 @invoke.task()
 def emulator_test(c):
@@ -12,11 +14,12 @@ def emulator_test(c):
 
 @invoke.task()
 def device_test(c):
-    launch = launcher.launcher(device="ZH800695RV")
+    appium_server = launcher.launcher(device="ZH800695RV")
     
-    launch.startAppium()
-    launch.Execute("robot -d ./output -v PLATFORM_VERSION:5.1.1 -v DEVICE_NAME:ZH800695RV tests/app_test.robot", is_background = False)
-    launch.stopAppium()
+    appium_server.start_s()
+    launcher.Execute("robot -d ./output -v PLATFORM_VERSION:5.1.1 -v DEVICE_NAME:ZH800695RV tests/app_test.robot", is_background = False)
+    sleep(3)
+    appium_server.stop_s()
     
 @invoke.task()
 def launch_test(c):
@@ -24,3 +27,7 @@ def launch_test(c):
     appium.launch()
     robot = launcher.Execute("robot -d ./output -v PLATFORM_VERSION:5.1.1 -v DEVICE_NAME:ZH800695RV tests/app_test.robot", is_background = False)
     appium.stop()
+
+@invoke.task()
+def run_comm(c):
+    launcher.Execute("dir", is_background=False)   # worth a shot ..... didn't work

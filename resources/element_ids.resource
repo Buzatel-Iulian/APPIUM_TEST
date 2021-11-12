@@ -15,8 +15,9 @@ ${Form.Register.EmailAddress.Txt}    id=com.loginmodule.learning:id/textInputEdi
 ${Form.Register.Password.Txt}    id=com.loginmodule.learning:id/textInputEditTextPassword
 ${Form.Register.PasswordConfirmation.Txt}    id=com.loginmodule.learning:id/textInputEditTextConfirmPassword
 ${Form.Register.Register.Btn}    id=com.loginmodule.learning:id/appCompatButtonRegister
+${Form.Register.Login.Btn}    id=com.loginmodule.learning:id/appCompatTextViewLoginLink
 
-${Form.Account.Name.Txt}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]
+${Form.Account.Name.Txt}    xpath=/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.View/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.support.v7.widget.RecyclerView/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout[1]/android.widget.TextView[2]
 #${Form.Account.Name.Txt}    id=com.loginmodule.learning:id/textViewName
 ${Form.Account.EmailAddress.Txt}    id=com.loginmodule.learning:id/textViewEmail
 ${Form.Account.Password.Txt}    id=com.loginmodule.learning:id/textViewPassword    

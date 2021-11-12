@@ -34,11 +34,12 @@ Launch Aplication
     #Log To Console    got to 2
 
 Register New User
-    Log Visibility    ${Form.Login.CreateOne.Link}    Create Account Link
+    Log Visibility    ${Form.Login.CreateOne.Link}    \nCreate Account Link
     Scroll Down to    ${Form.Login.CreateOne.Link}
     Log Visibility    ${Form.Login.CreateOne.Link}    Create Account Link
     Click Element    ${Form.Login.CreateOne.Link}
     Sleep    2s
+
     Log Visibility    ${Form.Register.Register.Btn}    Register Button
     Scroll Down to    ${Form.Register.Register.Btn}
     Log Visibility    ${Form.Register.Register.Btn}    Register Button
@@ -48,6 +49,12 @@ Register New User
     Input Text    ${Form.Register.Password.Txt}    g00dPassword
     Input Text    ${Form.Register.PasswordConfirmation.Txt}    g00dPassword
     Click Element    ${Form.Register.Register.Btn}
+    Sleep    2s
+
+    Log Visibility    ${Form.Register.Login.Btn}    Login Link
+    Scroll Down to    ${Form.Register.Login.Btn}
+    Log Visibility    ${Form.Register.Login.Btn}    Login Link
+    Click Element    ${Form.Register.Login.Btn}
     Sleep    2s
 
 Login User

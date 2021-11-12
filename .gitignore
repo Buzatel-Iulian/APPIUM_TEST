@@ -11,3 +11,4 @@ testing.py
 vnv/
 venv/
 __pycache__/
+output/

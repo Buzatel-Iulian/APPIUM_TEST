@@ -12,7 +12,7 @@ class launcher:
         self.is_background = is_background
 
     def Execute(self):
-        print('Executing command:\n' + ' '.join(self.command))
+        print('Executing command:\n' + self.command +"\n")
 
         process = subprocess.Popen(self.command, stdout=subprocess.PIPE,
                                     stderr=subprocess.STDOUT, universal_newlines=True, shell=True)
@@ -62,7 +62,7 @@ class launcher:
 
 def Execute(command_list, is_background=False):
   
-  print('Executing command:\n' + ' '.join(command_list))
+  print('Executing command:\n' + command_list +"\n")
 
   process = subprocess.Popen(command_list, stdout=subprocess.PIPE,
                              stderr=subprocess.STDOUT, universal_newlines=True)

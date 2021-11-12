@@ -6,7 +6,7 @@ import platform
 class launcher:
     def __init__(self, command="whoami", task_name="", is_background=True):
         self.command = command
-        self.logfile = command.split()[0] + "log.txt"
+        self.logfile = "output/" + command.split()[0] + "log.txt"
         self.aplication = None
         self.task_name = task_name
         self.is_background = is_background

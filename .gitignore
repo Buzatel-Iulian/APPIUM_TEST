@@ -1,11 +1,12 @@
 log.html
-output.xml
 report.html
 
-appium_log.txt
+output.xml
 
-appium_log1.txt
+appiumlog.txt
+appiumlog1.txt
+
+testing.py
 
 venv/
-
 __pycache__/

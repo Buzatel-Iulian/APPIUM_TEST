@@ -8,5 +8,6 @@ appiumlog1.txt
 
 testing.py
 
+vnv/
 venv/
 __pycache__/

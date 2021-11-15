@@ -21,8 +21,6 @@ ${APP_ACTIVITY}    com.loginmodule.learning.activities.LoginActivity
 *** Tasks ***
 
 Launch Aplication
-    #Scroll Down to    ${Form.Login.CreateOne.Link}
-    #Log To Console    got to 1
     Open Application    ${APPIUM_SERVER}
     ...    platformName=${PLATFORM_NAME}
     ...    platformVersion=${PLATFORM_VERSION}
@@ -31,7 +29,6 @@ Launch Aplication
     ...    appPackage=${APP_PACKAGE}
     ...    appActivity=${APP_ACTIVITY}
     Sleep    2s
-    #Log To Console    got to 2
 
 Register New User
     Log Visibility    ${Form.Login.CreateOne.Link}    \nCreate Account Link

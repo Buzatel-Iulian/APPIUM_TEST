@@ -6,3 +6,6 @@ KILL appium :
 -Windows: taskkill /F /IM node.exe
 -Linux: killall node
 -Mac: killall node
+
+Start appium in a separate command prompt :
+https://stackoverflow.com/questions/51734382/how-to-start-appium-server-programmatically-in-python

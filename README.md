@@ -4,7 +4,7 @@ This repository is supposed to serve as a personal note on the setup and use of 
 
 ##  Setup
 For it to be functional, the test requires the following to be installed:
-*   Appium, by installing [node.js](https://nodejs.org/en/) and running the command `npm install appium`
+*   Appium, by installing [node.js](https://nodejs.org/en/) and running the command `npm install -g appium`
 *   [Appium Inspector](https://github.com/appium/appium-inspector/releases) (normal instalation)
 *   Java Develompment Kit ([JDK](https://www.oracle.com/java/technologies/java-se-development-kit11-downloads.html))
 *   [Android Studio](https://developer.android.com/studio/) (especially if you want to use an emulated android device)
